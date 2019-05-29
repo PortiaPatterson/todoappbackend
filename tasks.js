@@ -16,7 +16,7 @@ app.get("/tasks", function (request, response) {
       completed: false,
       date: "30-01-2019"
     },
-    { 
+    {
       description: "Differentiate lessons",
       completed: false,
       date: "31-01-2019"
@@ -33,6 +33,13 @@ app.get("/tasks", function (request, response) {
 
     }
   ]
+  tasks.forEach(function (task) {
+    if (task.completed == true) {
+      newtask.push = task;
+      console.log(newtask)
+    }
+  });
+  
   // response.json({
   //   message:`Username ${username} requested tasks`
   // });
