@@ -5,6 +5,7 @@ const app = express();
 
 app.get("/tasks", function (request, response) {
   const username = request.query.username;
+  let newTask = [];
   const tasks = [
     {
       description: "Create lesson plans",
@@ -35,14 +36,14 @@ app.get("/tasks", function (request, response) {
   ]
   tasks.forEach(function (task) {
     if (task.completed == true) {
-      newtask.push = task;
-      console.log(newtask)
+      newTask.push = task;
     }
   });
   
   // response.json({
   //   message:`Username ${username} requested tasks`
   // });
+  return newTask;
 });
 
 module.exports.handler = serverless(app);
